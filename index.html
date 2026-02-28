@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>✧끝내주는 공연✧</title>
+
+<style>
+:root{
+  --text:#111827;
+  --muted:#6b7280;
+  --card:rgba(255,255,255,0.85);
+  --card-border:rgba(17,24,39,0.10);
+  --accent:#6e9cff;
+  --accent2:#bb72ff;
+  --accent3:#2563eb;
+  --accent4:#a855f7;
+  --radius:16px;
+  --shadow:0 14px 34px rgba(17,24,39,0.18);
+
+  --wrap-pad:20px;
+  --card-pad:16px;
+  --h1:28px;
+  --subtitle:12px;
+  --meta:13px;
+  --h2:14px;
+  --body:12px;
+  --btn:13px;
+  --addr:13px;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);
+  font-size:var(--body);
+  background:
+    linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)),
+    url("poster-bg.jpeg") center/cover no-repeat;
+}
+
+.wrap{
+  max-width:520px;
+  margin:auto;
+  padding:var(--wrap-pad) 16px 50px;
+}
+
+header{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+h1{
+  margin:0 0 8px;
+  font-size:var(--h1);
+  font-weight:800;
+  background:linear-gradient(90deg,var(--accent3),var(--accent4));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+  color:#000;
+  font-size:var(--subtitle);
+  letter-spacing:2px;
+  font-weight:800;
+  margin-bottom:4px;
+}
+
+.meta{
+  font-size:var(--meta);
+  color:#000;
+  font-weight:800;
+}
+
+.card{
+  position:relative;
+  background:var(--card);
+  border:1px solid var(--card-border);
+  padding:var(--card-pad);
+  border-radius:var(--radius);
+  margin-bottom:16px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+}
+
+.card h2{
+  margin:0 0 12px;
+  font-size:var(--h2);
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.card h2::before{
+  content:"";
+  width:9px;height:9px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 6px 14px rgba(37,99,235,0.18);
+}
+
+button,.btn{
+  padding:8px 14px;
+  border-radius:999px;
+  border:none;
+  font-size:var(--btn);
+  font-weight:800;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#fff;
+  cursor:pointer;
+  display:inline-block;
+  text-decoration:none;
+  box-shadow:0 10px 20px rgba(37,99,235,0.20);
+  transition:0.2s ease;
+}
+button:hover,.btn:hover{transform:translateY(-1px);}
+
+.mono{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Courier New",monospace;
+  margin-bottom:8px;
+  font-size:0.9em;
+}
+
+.address{
+  font-size:var(--addr);
+  color:var(--muted);
+  margin:6px 0 10px;
+}
+
+ul{
+  padding-left:16px;
+  line-height:1.6;
+  margin:0 0 14px;
+}
+
+.section-title{
+  font-weight:900;
+  margin:10px 0 8px;
+}
+
+.song{margin-bottom:10px;}
+.song-title{font-weight:800; margin-bottom:3px;}
+.song-members{font-size:0.88em; color:var(--muted); line-height:1.45;}
+
+.location-row{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.location-right img{
+  width:100%;
+  border-radius:14px;
+  box-shadow:0 10px 24px rgba(17,24,39,0.25);
+  border:1px solid rgba(17,24,39,0.10);
+  background:#fff;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+  <h1>✧끝내주는 공연✧</h1>
+  <div class="subtitle">LIVE CONCERT</div>
+  <div class="meta">2026.04.04 (토) 17:00</div>
+</header>
+
+<div class="card">
+  <h2>안내사항</h2>
+  <ul>
+    <li>본 공연은 실제 사람이 연주합니다.</li>
+    <li>공연 중 박수는 자유입니다.</li>
+    <li>공연장 천장은 위쪽에 위치해 있습니다.</li>
+    <li>본 공연을 통해 얻는 감동에는 개인차가 있을 수 있습니다.</li>
+    <li>오늘 끝내주는 공연에 함께 해주셔서 진심으로 감사드립니다.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>입장료 / 계좌 이체</h2>
+  <div>입장료 <strong>₩5,000</strong></div>
+  <div class="mono">카카오뱅크 3333-10-1019709 예금주 김다슬</div>
+  <button onclick="copyAccountNumber()">계좌번호 복사</button>
+</div>
+
+<div class="card">
+  <h2>곡 리스트</h2>
+
+  <div class="section-title">1부 — 선율</div>
+  <ul>
+    <li class="song">
+      <div class="song-title">Dive - Olivia Dean</div>
+      <div class="song-members">V 김도이 · B 이지상 · S 조재희</div>
+    </li>
+    <li class="song">
+      <div class="song-title">별 떨어진다 - D.O.</div>
+      <div class="song-members">V 김다슬 · G 이승민 · B 이지상 · D 최승화 · SH 손세희</div>
+    </li>
+    <li class="song">
+      <div class="song-title">Pretender - 오피셜히게단디즘</div>
+      <div class="song-members">V 김강현 · G 이승민 · B 이지상 · D 최승화 · S 박형준 · SH 김다슬</div>
+    </li>
+    <li class="song">
+      <div class="song-title">Marigold - 아이묭</div>
+      <div class="song-members">V 김다슬 · G 조재희 · G 박형준 · E 이승민 · B 이지상 · D 최승화 · S 김강현</div>
+    </li>
+    <li class="song">
+      <div class="song-title">toxic till the end - 로제</div>
+      <div class="song-members">V1 김도이 · V2 김다슬 · G 이승민 · B 이지상 · D 최승화 · S 조재희 · SH 손세희</div>
+    </li>
+    <li class="song">
+      <div class="song-title">박하사탕 - YB</div>
+      <div class="song-members">V 김강현 · E1 이승민 · E2 조재희 · B 이지상 · D 최승화</div>
+    </li>
+    <li class="song">
+      <div class="song-title">사포닌 같은 너 - 유다빈밴드</div>
+      <div class="song-members">V 손세희 · G 이승민 · B 이지상 · D 최승화 · S 김강현</div>
+    </li>
+    <li class="song">
+      <div class="song-title">이 지금 - 아이유</div>
+      <div class="song-members">V 손세희 · B 이지상 · D 최승화 · S 조재희</div>
+    </li>
+    <li class="song">
+      <div class="song-title">Close to you - 쏠 & 따마</div>
+      <div class="song-members">V1 김다슬 · V2 손세희 · B 박형준 · D 최승화 · S 조재희</div>
+    </li>
+    <li class="song">
+      <div class="song-title">Tomboy - 혁오</div>
+      <div class="song-members">V 김강현 · E1 이승민 · E2 박형준 · B 이지상 · D 최승화 · S 조재희</div>
+    </li>
+  </ul>
+
+  <div class="section-title">2부 — SASSY</div>
+  <ul>
+    <li class="song">
+      <div class="song-title">Whatever - Oasis</div>
+      <div class="song-members">V · G · E · B · D · S</div>
+    </li>
+    <li class="song">
+      <div class="song-title">와리가리 - 혁오</div>
+      <div class="song-members">V · G · E · B · D · S</div>
+    </li>
+    <li class="song">
+      <div class="song-title">저녁을 사랑하겠어 - 연정</div>
+      <div class="song-members">V · G · E · B · D · S</div>
+    </li>
+    <li class="song">
+      <div class="song-title">사랑해줘 - ?</div>
+      <div class="song-members">V · G · E · B · D · S</div>
+    </li>
+    <li class="song">
+      <div class="song-title">goodbye-bye - 토미오카 아이</div>
+      <div class="song-members">V · G · E · B · D · S</div>
+    </li>
+    <li class="song">
+      <div class="song-title">사랑하게 될 거야 - 한로로</div>
+      <div class="song-members">V · G · E · B · D · S</div>
+    </li>
+    <li class="song">
+      <div class="song-title">얼음요새 - 디어클라우드</div>
+      <div class="song-members">V · G · E · B · D · S</div>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>공연장 위치</h2>
+  <div class="location-row">
+    <div class="location-left">
+      <div style="font-weight:900;">카야스테이지</div>
+      <div class="address">서울특별시 강남구 도곡동 413-11 지하1층</div>
+      <a class="btn"
+         href="https://map.naver.com/v5/search/%EC%B9%B4%EC%95%BC%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%A7%80"
+         target="_blank" rel="noopener">네이버맵</a>
+    </div>
+    <div class="location-right">
+      <img src="map.png" alt="지도 이미지">
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+async function copyAccountNumber(){
+  const onlyDigits="3333101019709";
+  await navigator.clipboard.writeText(onlyDigits);
+}
+</script>
+
+</body>
+</html>
