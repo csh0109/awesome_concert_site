@@ -41,7 +41,11 @@
       font-size: var(--body);
       background:
         linear-gradient(rgba(245, 248, 252, 0.45), rgba(237, 242, 251, 0.50)),
-        url("poster-bg.jpeg") center top 0px / cover no-repeat fixed;
+        url("poster-bg.jpeg");
+      background-position: center top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
     }
 
     .wrap {
